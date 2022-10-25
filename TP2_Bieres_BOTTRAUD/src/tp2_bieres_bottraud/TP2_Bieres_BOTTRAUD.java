@@ -22,6 +22,16 @@ public class TP2_Bieres_BOTTRAUD {
     uneBiere.brasserie = " Dubuisson ";
     uneBiere.ouverte = false;
     uneBiere.lireEtiquette();
-    }
     
+    BouteilleBiere1 uneBiere1 = new BouteilleBiere() ;
+    uneBiere1.nom = "Cuvée des trolls"; 
+    uneBiere1.degreAlcool = 7.0 ;
+    uneBiere1.brasserie = " Dubuisson ";
+    uneBiere1.ouverte = false;
+    uneBiere1.lireEtiquette();
+    
+     BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6
+,"Abbaye de Leffe") ;
+    }
+   
 }
