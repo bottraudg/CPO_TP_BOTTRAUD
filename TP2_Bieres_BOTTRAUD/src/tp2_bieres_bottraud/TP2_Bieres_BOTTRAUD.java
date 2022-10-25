@@ -21,8 +21,7 @@ public class TP2_Bieres_BOTTRAUD {
     uneBiere.degreAlcool = 7.0 ;
     uneBiere.brasserie = " Dubuisson ";
     uneBiere.ouverte = false;
-    
-            uneBiere.lireEtiquette();
+    uneBiere.lireEtiquette();
     }
     
 }
