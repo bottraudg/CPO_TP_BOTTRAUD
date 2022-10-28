@@ -8,7 +8,6 @@ package tp2_bieres_bottraud;
  *
  * @author guilenebottraud
  */
- 
 public class TP2_Bieres_BOTTRAUD {
 
     /**
@@ -16,22 +15,37 @@ public class TP2_Bieres_BOTTRAUD {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    BouteilleBiere uneBiere = new BouteilleBiere() ;
-    uneBiere.nom = "Cuvée des trolls"; 
-    uneBiere.degreAlcool = 7.0 ;
-    uneBiere.brasserie = " Dubuisson ";
-    uneBiere.ouverte = false;
-    uneBiere.lireEtiquette();
-    
-    BouteilleBiere1 uneBiere1 = new BouteilleBiere() ;
-    uneBiere1.nom = "Cuvée des trolls"; 
-    uneBiere1.degreAlcool = 7.0 ;
-    uneBiere1.brasserie = " Dubuisson ";
-    uneBiere1.ouverte = false;
-    uneBiere1.lireEtiquette();
-    
-     BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6
-,"Abbaye de Leffe") ;
+        BouteilleBiere uneBiere = new BouteilleBiere("Cuvée des trolls", 7.0, "Dubuisson");// création d'un constructeur, donc les instructions d’affectation des attributs de la question 7 sont désormais obsolètes   
+        uneBiere.lireEtiquette();
+//uneBiere.nom = "Cuvée des trolls"; 
+        //uneBiere.degreAlcool = 7.0 ;
+        //uneBiere.brasserie = " Dubuisson ";
+        //uneBiere.ouverte = false;
+        //uneBiere.lireEtiquette();
+
+        BouteilleBiere autreBiere = new BouteilleBiere("Leffe", 6.6, "Abbaye de Leffe");
     }
-   
-}
+
+    {
+        BouteilleBiere uneBiere1 = new BouteilleBiere("mort subite", 5.5, "Brasserie De Keersmaeker");
+        uneBiere1.lireEtiquette();
+
+        BouteilleBiere uneBiere2 = new BouteilleBiere("heineken", 5, "Brasserie Heineken");
+        uneBiere2.lireEtiquette();
+
+        BouteilleBiere uneBiere3 = new BouteilleBiere("goudale", 7.2, "Brasserie Jeanne D'arc");
+        uneBiere3.lireEtiquette();
+
+        System.out.println(uneBiere.ouverte);
+        boolean Decapsuler = uneBiere.Decapsuler();
+        System.out.println(uneBiere.ouverte);
+        System.out.println(uneBiere);
+
+        System.out.println(uneBiere1);
+        System.out.println(uneBiere2);
+        System.out.println(uneBiere3);
+    }
+
+    
+    }
+
