@@ -15,8 +15,15 @@ public class BouteilleBiere {
     String brasserie;
     boolean ouverte;
 
- Public void lireEtiquette() {
+ public void lireEtiquette() {
 System.out.println("Bouteille de " + nom +" (" + degreAlcool + " degres) \nBrasserie : " + brasserie ) ;
-}   
- 
+ }
+ public BouteilleBiere(String unNom, float unDegre, String uneBrasserie) { // permet de pouvoir creer des constructeurs avec la même base 
+   nom = unNom;
+   degreAlcool = unDegre;
+   brasserie = uneBrasserie;
+   ouverte = false;
 }
+ }   
+ 
+
