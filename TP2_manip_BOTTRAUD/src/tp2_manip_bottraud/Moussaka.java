@@ -10,7 +10,8 @@ package tp2_manip_bottraud;
  */
 public class Moussaka {
      int nbCalories;
-     public Moussaka(int nbCalories){
-        nbCalories=nbCalories;
+     //public Moussaka(int nbCalories){
+        //nbCalories=nbCalories;
+     // il faut supprimer les deux lignes au dessus pour enlever l'erreur dans le main 
     }
 }
