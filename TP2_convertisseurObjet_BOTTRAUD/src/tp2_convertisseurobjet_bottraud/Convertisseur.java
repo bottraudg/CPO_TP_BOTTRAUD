@@ -13,6 +13,7 @@ public class Convertisseur {
     public Convertisseur () {
         nbConversions = 0;
     }
+    //Q3 debut 
 public double CelciusVersKelvin(double tempCelcius) {
     double tempKelvin = (double) (tempCelcius - 273.2);
     nbConversions+=1;
@@ -37,14 +38,24 @@ public double CelciusVersFahrenheit(double tempCelcius) {
     
     return tempFahrenheit;
 }
+
 public double FahrenheitVersKelvin(double tempFahrenheit) {
     double tempKelvin = (double) ((tempFahrenheit-32)*5/9+273.2);
     nbConversions+=1;
     
     return tempKelvin;
+    
+}   
+public double KelvinVersFahrenheit(double tempKelvin) {
+    double tempFahrenheit = (double) ((tempKelvin - 273.15) * 9 / 5 + 32);
+    nbConversions+=1;
+       
+    return tempFahrenheit;
+    
 }
 @Override
 public String toString () {
   return "nb de conversions"+ nbConversions;
 }
+//Q3 fin 
 }
