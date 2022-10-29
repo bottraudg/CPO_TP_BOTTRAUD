@@ -11,19 +11,40 @@ package tp2_bieres_bottraud;
  
 public class BouteilleBiere {
     String nom;
-    double degreAlcool;
+public double degreAlcool;
     String brasserie;
-    boolean ouverte;
-
+public boolean ouverte;
+//cette méthode permet d'afficher les informations 
  public void lireEtiquette() {
 System.out.println("Bouteille de " + nom +" (" + degreAlcool + " degres) \nBrasserie : " + brasserie ) ;
  }
- public BouteilleBiere(String unNom, float unDegre, String uneBrasserie) { // permet de pouvoir creer des constructeurs avec la même base 
+ //permet de pouvoir creer des constructeurs avec la même base 
+ public BouteilleBiere(String unNom, double unDegre, String uneBrasserie) { 
    nom = unNom;
    degreAlcool = unDegre;
    brasserie = uneBrasserie;
    ouverte = false;
 }
- }   
+ //permet de savoir si la bière est décapsulée
+        public boolean Decapsuler(){ //Q12
+            if (ouverte==false){
+                ouverte=true;
+                System.out.println("erreur: bière deja ouverte");
+                return true; 
+            }else{
+                   System.out.println("bière pas ouverte");
+                   return false;
+
+        
+            }
+        }
  
+    @Override
+    public String toString() {
+    String chaine_a_retourner;
+    chaine_a_retourner = nom + " " + degreAlcool + " degrès ouverte ?";
+    if (ouverte == true ) chaine_a_retourner += "oui" ; else chaine_a_retourner += "non" ;
+    return chaine_a_retourner ;
+    }
+    }
 
