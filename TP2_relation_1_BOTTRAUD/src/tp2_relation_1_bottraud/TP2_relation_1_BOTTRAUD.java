@@ -22,6 +22,28 @@ Voiture uneMicra = new Voiture ("Micra", "Nissan", 4 ) ;
 Personne bob = new Personne("Bobby", "Sixkiller");
 Personne reno = new Personne("Reno", "Raines");
 System.out.println("liste des voitures disponibles "+ uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra ) ;
+bob.liste_voitures[0] = uneClio ;
+bob.nbVoitures = 1 ;
+//uneClio.proprietaire = bob ;
+     System.out.println("la premiere voiture de Bob est " + bob.liste_voitures[0] ) ;
+     bob.liste_voitures[0] = uneClio ; 
+     bob.liste_voitures[1] = uneMicra ;
+     reno.liste_voitures[2] = une2008 ;
+     reno.liste_voitures[3] = uneAutreClio;
+            bob.nbVoitures = 2 ; // nb de voiture possedé par bob
+        uneClio.Proprietaire = bob ;// on affecte une voiture l'objet uneClio au propriétaire bob
+        uneMicra.Proprietaire = bob ;
+        une2008.Proprietaire = reno ;
+        uneAutreClio.Proprietaire = reno;
+        
+        //System.out.println("liste des voitures disponibles "+ uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra ) ;
+        System.out.println("la premiere voiture de Bob est " + bob.liste_voitures[0] ); 
+        System.out.println("la deuxième voiture de Bob est " +  bob.liste_voitures[1]); // affichage
+        System.out.println("la première voiture de Reno est " +  reno.liste_voitures[2]);
+        System.out.println("la deuxième voiture de Reno est " +  reno.liste_voitures[3]);
+
+    
+    
     }
     
 }
