@@ -4,6 +4,8 @@
  */
 package Personnages;
 
+import Armes.Arme;
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -13,7 +15,7 @@ import java.util.Vector;
 public abstract class Personnage {
      String nomPerso;
     int nivVie;
-    String ArmePortee;
+    String ArmePortee = null;
     
     public int NiveaudeVie(){
         return nivVie;
@@ -32,7 +34,20 @@ public abstract class Personnage {
         }
         
     }
-   
+   public void armePortee(){
+        System.out.println("voici les armes disponibles, laquelle voulez vous choisir? \n");
+        for (int i =0; i < this.armesPossedes.size(); i++ ){
+            System.out.println("("+ i + ") " + this.armesPossedes.elementAt(i)); 
+    }
+      Scanner choix = new Scanner(System.in);
+      int armeAjoutee = choix.nextInt();
+      Arme nomPerso;
+      
+   }
+     @Override
+    public String toString () {                             // méthode string 
+        return "nom du personnage: " + nomPerso + ", Niveau de vie: " + nivVie;
+    }
     
     
 }
