@@ -4,6 +4,8 @@
  */
 package Personnages;
 
+import java.util.Vector;
+
 /**
  *
  * @author guilenebottraud
@@ -20,4 +22,17 @@ public abstract class Personnage {
     public String NomPersonnage(){
         return nomPerso;
     }
+    Vector armesPossedes = new Vector ();
+    public boolean addArme (){
+        if (armesPossedes.size() == 5){
+            return false;
+        }
+        else{
+            return true;
+        }
+        
+    }
+   
+    
+    
 }
