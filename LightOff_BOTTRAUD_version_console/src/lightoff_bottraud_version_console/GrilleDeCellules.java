@@ -118,22 +118,33 @@ public void eteindreToutesLesCellules() {
     }
 
     @Override
+ 
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < nbLignes; i++) {
-            for (int j = 0; j < nbColonnes; j++) {
-                result.append(matriceCellules[i][j].estAllumee() ? "1" : "0");
-            }
-            result.append("\n");
+        String chaine = "   |";
+        for (int i=0;i<nbLignes;i++){
+                chaine+= " "+i+" |";
         }
-        return result.toString();
-    }
-
-    public static void main(String[] args) {
-        GrilleDeCellules grille = new GrilleDeCellules(5, 5);
-        System.out.println(grille.toString());
-
-        grille.melangerMatriceAleatoirement(10);
-        System.out.println(grille.toString());
+       
+        chaine += "\n";
+       
+        for (int i=0;i<nbLignes+1;i++){
+            chaine+= "----";
+        }
+       
+        chaine += "\n";
+           
+        for (int j=0;j<nbLignes;j++){
+            chaine+= " "+j+" |";
+            for (int k=0;k<nbColonnes;k++){
+                chaine+=" "+matriceCellules[j][k].toString()+" |";
+            }
+            chaine += "\n";
+            for (int i=0;i<nbLignes+1;i++){
+            chaine+= "----";
+            }
+            chaine += "\n";
+        }
+       
+        return chaine;
     }
 }
