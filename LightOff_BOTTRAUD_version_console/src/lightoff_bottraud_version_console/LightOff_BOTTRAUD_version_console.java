@@ -17,6 +17,8 @@ public class LightOff_BOTTRAUD_version_console {
         CelluleLumineuse cellule1 = new CelluleLumineuse(false);
         CelluleLumineuse cellule2 = new CelluleLumineuse(true);
 
+        //cellule1.activerLigneColonneOuDiagonaleAleatoire();
+        
         cellule1.etatCellule();
         System.out.println(cellule1);
 
@@ -32,39 +34,45 @@ public class LightOff_BOTTRAUD_version_console {
         cellule1.getEtat();
         System.out.println(cellule1);
 
-        GrilleDeCellules grille = new GrilleDeCellules(5, 5);
-        grille.eteindreToutesLesCellules();
-        grille.melangerMatriceAleatoirement(0);
+        GrilleDeCellules grilleTest = new GrilleDeCellules(5, 5);
+        
+        
+        grilleTest.activerLigneColonneOuDiagonaleAleatoire();
+        
+              
+        grilleTest.melangerMatriceAleatoirement(0);
+        
+        
         System.out.println("Grille initiale :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-        grille.activerLigneDeCellules(2);
+        grilleTest.activerLigneDeCellules(2);
         System.out.println("Après activation d'une ligne :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-        grille.activerColonneDeCellules(3);
+        grilleTest.activerColonneDeCellules(3);
         System.out.println("Après activation d'une colonne :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-        grille.activerDiagonaleDescendante();
+        grilleTest.activerDiagonaleDescendante();
         System.out.println("Après activation de la diagonale descendante :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-        grille.activerDiagonaleMontante();
+        grilleTest.activerDiagonaleMontante();
         System.out.println("Après activation de la diagonale montante :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-        grille.activerLigneColonneOuDiagonaleAleatoire();
+        grilleTest.activerLigneColonneOuDiagonaleAleatoire();
         System.out.println("Après activation aléatoire :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-        grille.melangerMatriceAleatoirement(10);
+        grilleTest.melangerMatriceAleatoirement(10);
         System.out.println("Après mélange aléatoire :");
-        System.out.println(grille.toString());
+        System.out.println(grilleTest.toString());
 
-       
-        
-        
+        Partie partie = new Partie(); // Crée une instance de la classe Partie
+        partie.lancerPartie(); // Appelle la méthode lancerPartie pour commencer le jeu
+
     }
 
 }
