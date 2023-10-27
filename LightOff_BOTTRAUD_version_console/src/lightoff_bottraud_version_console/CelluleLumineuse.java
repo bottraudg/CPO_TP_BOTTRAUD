@@ -9,6 +9,9 @@ package lightoff_bottraud_version_console;
  * @author guilenebottraud
  */
 public class CelluleLumineuse {
+
+    public CelluleLumineuse(boolean par) {
+    }
    private boolean etat =false;// initialisation à éteinte 
     
     /**
@@ -44,6 +47,14 @@ public class CelluleLumineuse {
     
     public boolean estEteint(){
         if (etat = false){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public boolean estAllumee(){
+        if (etat=true){
             return true;
         }else{
             return false;
