@@ -41,27 +41,30 @@ public class Partie {
             System.out.println(grille.toString());
 
             // Demander au joueur de saisir un coup
+            // Manière de jouer : choisir entre ligne colonne et diagonale, puis si colonne ou ligne a été choisi
+            // choisir par la suite un chiffre entre 0 et nbLignes (pareil pour les colonnes avec nbColonnes). si diagonale a etait choisi 
+            //choisir descendante ou montante  
             System.out.println("Entrez un coup (ligne, colonne ou diagonale) :");
-            String coup = scanner.nextLine();
+            String coup = scanner.nextLine();// enter ligne ou colonne ou diagonale
 
             
             if (coup.equalsIgnoreCase("ligne")) {
-                System.out.println("Quelle ligne voulez vous activer ? ");//
+                System.out.println("Quelle ligne voulez vous activer ? ");
 
-                int ligne = scanner.nextInt();
+                int ligne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
                 grille.activerLigneDeCellules(ligne);
 
             } else if (coup.equalsIgnoreCase("colonne")) {
                  System.out.println("Quelle colonne voulez vous activer ? ");
                  
                  
-                int colonne = scanner.nextInt();
+                int colonne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
                 grille.activerColonneDeCellules(colonne); 
                 
                 
             } else if (coup.equalsIgnoreCase("diagonale")) {
                 System.out.println ( "Quelle diagonale voulez vous activer, montante ou descendante");
-                String diagonale = scanner.nextLine();
+                String diagonale = scanner.nextLine();// rentrer montante ou descendante
                 if (diagonale.equalsIgnoreCase("montante")){
                     grille.activerDiagonaleDescendante();
                 }else{
