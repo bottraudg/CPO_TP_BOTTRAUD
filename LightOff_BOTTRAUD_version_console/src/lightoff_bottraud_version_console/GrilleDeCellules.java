@@ -16,6 +16,11 @@ public class GrilleDeCellules {
     int nbLignes;
     int nbColonnes;
 
+    /**
+     *initialisation de la grille de jeu sous forme de tableau dont la taille peut etre regler grace à nbLignes et nbColonnes
+     * @param nbLignes
+     * @param nbColonnes
+     */
     public GrilleDeCellules(int nbLignes, int nbColonnes) {
         this.nbLignes = nbLignes;
         this.nbColonnes = nbColonnes;
@@ -28,37 +33,59 @@ public class GrilleDeCellules {
             }
         }
     }
-public void eteindreToutesLesCellules() {
+
+    /**
+     * Permet d'eteindre toutes les cellules 
+     */
+    public void eteindreToutesLesCellules() {
     for (int i = 0; i < nbLignes; i++) {
         for (int j = 0; j < nbColonnes; j++) {
             matriceCellules[i][j].eteindreCellule();
         }
     }
 }
+
+    /**
+     * permet d'activer (c'est a dire les allumer) les lignes une par une des cellules 
+     * @param idLigne numero de la ligne 
+     */
     public void activerLigneDeCellules(int idLigne) {
-        for (int j = 0; j < nbColonnes; j++) {
+        for (int j = 0; j < nbLignes; j++) {
             matriceCellules[idLigne][j].activerCellule();
         }
     }
 
+    /**
+     *permet d'activer (c'est a dire les allumer) les colonnes une par une des cellules 
+     * @param idColonne numero de la colonne
+     */
     public void activerColonneDeCellules(int idColonne) {
-        for (int i = 0; i < nbLignes; i++) {
+        for (int i = 0; i < nbColonnes; i++) {
             matriceCellules[i][idColonne].activerCellule();
         }
     }
 
+    /**
+     *Permet d'activer (c'est a dire allumer) la diagonale descendante (de gauche à droite) une par une des cellules 
+     */
     public void activerDiagonaleDescendante() {
-        for (int i = 0; i < Math.min(nbLignes, nbColonnes); i++) {
+        for (int i = 0; i < nbLignes && i < nbColonnes; i++) {
             matriceCellules[i][i].activerCellule();
         }
     }
 
+    /**
+     *Permet d'activer (c'est a dire allumer) la diagonale montante (de gauche à droite) une par une des cellules 
+     */
     public void activerDiagonaleMontante() {
         for (int i = 0; i < nbLignes && i < nbColonnes; i++) {
             matriceCellules[i][nbColonnes - 1 - i].activerCellule();
         }
     }
 
+    /**
+     * Permet d'activer (allumer) une ligne ou une colonne ou une diagonnales de manière aléatoire 
+     */
     public void activerLigneColonneOuDiagonaleAleatoire() {
         Random random = new Random();
         int choix = random.nextInt(4);
@@ -79,6 +106,10 @@ public void eteindreToutesLesCellules() {
         }
     }
     
+    /**
+     * Permet de verifier l'état des cellules, plus précisement si elles sont toutes eteintes
+     * @return
+     */
     public boolean cellulesToutesEteintes() {
     for (int i = 0; i < nbLignes; i++) {
         for (int j = 0; j < nbColonnes; j++) {
@@ -90,7 +121,10 @@ public void eteindreToutesLesCellules() {
     return true; // Si aucune cellule n'est allumée, retourne true
 }
     
-
+    /**
+     * Permet de melanger aléatoirement la matrice
+     * @param nbTours
+     */
     public void melangerMatriceAleatoirement(int nbTours) {
         Random random = new Random();
 
@@ -117,6 +151,10 @@ public void eteindreToutesLesCellules() {
         }
     }
 
+    /**
+     * Permet de rendre la grille plus estetique, avec des "|" qui rendre la lecture plus facile 
+     * @return
+     */
     @Override
  
     public String toString() {
