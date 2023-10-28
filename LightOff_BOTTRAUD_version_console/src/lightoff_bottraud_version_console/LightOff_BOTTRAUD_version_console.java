@@ -65,7 +65,7 @@ public class LightOff_BOTTRAUD_version_console {
 
         grilleTest.melangerMatriceAleatoirement(10);
         System.out.println("Après mélange aléatoire :");
-        System.out.println(grilleTest.toString());
+        System.out.println(grilleTest.toString());//
 
     }
 
