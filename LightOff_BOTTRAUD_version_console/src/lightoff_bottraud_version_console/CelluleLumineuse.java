@@ -64,7 +64,7 @@ private boolean etat;
             return "0";
         }else{
             return "X";
-        }
+        }//
     }
 
     
