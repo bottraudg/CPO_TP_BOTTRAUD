@@ -9,48 +9,28 @@ package lightoff_bottraud_version_console;
  * @author guilenebottraud
  */
 public class CelluleLumineuse {
-
+private boolean etat;
     public CelluleLumineuse(boolean par) {
+        etat = false;// initialisation à éteinte 
+    
     }
 
-   private boolean etat =false;// initialisation à éteinte 
+   
     
-    /**
-     *
-     * @return
-     */
-    public boolean etatCellule(){
-        if (etat = false ){
-            return false;
-        }else{
-            return false;
-        }
-    }
+   
     
     /**
      * Permet d'allumer la cellule
-     * @return
      */
-    public boolean activerCellule(){
-        if (etat=false){
-            etat = true;
-            
-        }else{
-            etat = false; 
-            
-        }
-        return etat;
+    public void activerCellule(){
+        etat= !etat;
     }
     
     /**
      * Permet d'eteindre la cellule
-     * @return
      */
-    public boolean eteindreCellule(){
-        if (etat = true){
-            etat = false;
-        }
-        return etat;
+    public void eteindreCellule(){
+        etat = false;
     }
     
     /**
@@ -58,16 +38,11 @@ public class CelluleLumineuse {
      * @return
      */
     public boolean estEteint(){
-       return etat = false;
+    return !etat;
     }
     
-    /**
-     *Permet de verifier l'etat de la cellule, ici voir si elle est eteinte 
-     * @return
-     */
-    public boolean estAllumee(){
-       return etat=true;
-    }
+    
+   
 
     /**
      * Permet simplement de verifier l'etat de la cellule, ce qui nous donnera soit activée soit eteinte
@@ -84,11 +59,11 @@ public class CelluleLumineuse {
      */
     @Override
     public String toString () {    // méthode string 
-        String allume;
-        if (etat=false){
-            return "X";
+        
+        if (etat){
+            return "0";
         }else{
-            return "O";
+            return "X";
         }
     }
 

@@ -17,7 +17,7 @@ public class GrilleDeCellules {
     int nbColonnes;
 
     /**
-     *initialisation de la grille de jeu sous forme de tableau dont la taille peut etre regler grace à nbLignes et nbColonnes
+     * Initialisation de la grille de jeu sous forme de tableau dont la taille peut etre regler grace à nbLignes et nbColonnes
      * @param nbLignes
      * @param nbColonnes
      */
@@ -113,7 +113,7 @@ public class GrilleDeCellules {
     public boolean cellulesToutesEteintes() {
     for (int i = 0; i < nbLignes; i++) {
         for (int j = 0; j < nbColonnes; j++) {
-            if (matriceCellules[i][j].estAllumee()) {
+            if (matriceCellules[i][j].estEteint()) {
                 return false; // Si au moins une cellule est allumée, retourne false
             }
         }
@@ -129,7 +129,10 @@ public class GrilleDeCellules {
         Random random = new Random();
 
         for (int tour = 0; tour < nbTours; tour++) {
-            int action = random.nextInt(5);
+            this.activerLigneColonneOuDiagonaleAleatoire();
+            
+            /*int action = random.nextInt(5);
+            
 
             switch (action) {
                 case 0:
@@ -147,7 +150,7 @@ public class GrilleDeCellules {
                 case 4:
                     activerLigneColonneOuDiagonaleAleatoire();
                     break;
-            }
+            }*/
         }
     }
 

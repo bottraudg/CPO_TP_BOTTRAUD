@@ -14,15 +14,13 @@ public class LightOff_BOTTRAUD_version_console {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         CelluleLumineuse cellule1 = new CelluleLumineuse(false);
         CelluleLumineuse cellule2 = new CelluleLumineuse(true);
         GrilleDeCellules grilleTest = new GrilleDeCellules(5, 5);
         Partie partie = new Partie(); // Crée une instance de la classe Partie
         partie.initialiserPartie();
         partie.lancerPartie(); // Appelle la méthode lancerPartie pour commencer le jeu
-
-        cellule1.etatCellule();
-        System.out.println(cellule1);
 
         cellule1.activerCellule();
         System.out.println(cellule1);
@@ -38,7 +36,7 @@ public class LightOff_BOTTRAUD_version_console {
 
         grilleTest.activerLigneColonneOuDiagonaleAleatoire();
 
-        grilleTest.melangerMatriceAleatoirement(0);
+        grilleTest.melangerMatriceAleatoirement(3);
 
         System.out.println("Grille initiale :");
         System.out.println(grilleTest.toString());
