@@ -46,7 +46,7 @@ public class Partie {
 
             
             if (coup.equalsIgnoreCase("ligne")) {
-                System.out.println("Quelle ligne voulez vous activer ? ");
+                System.out.println("Quelle ligne voulez vous activer ? ");//
 
                 int ligne = scanner.nextInt();
                 grille.activerLigneDeCellules(ligne);
