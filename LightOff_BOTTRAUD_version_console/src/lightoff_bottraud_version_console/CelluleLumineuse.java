@@ -12,6 +12,7 @@ public class CelluleLumineuse {
 
     public CelluleLumineuse(boolean par) {
     }
+
    private boolean etat =false;// initialisation à éteinte 
     
     /**
@@ -26,7 +27,10 @@ public class CelluleLumineuse {
         }
     }
     
-    
+    /**
+     * Permet d'allumer la cellule
+     * @return
+     */
     public boolean activerCellule(){
         if (etat=false){
             etat = true;
@@ -38,6 +42,10 @@ public class CelluleLumineuse {
         return etat;
     }
     
+    /**
+     * Permet d'eteindre la cellule
+     * @return
+     */
     public boolean eteindreCellule(){
         if (etat = true){
             etat = false;
@@ -45,26 +53,35 @@ public class CelluleLumineuse {
         return etat;
     }
     
+    /**
+     * Permet de verifier l'etat de la cellule, ici voir si elle est eteinte 
+     * @return
+     */
     public boolean estEteint(){
-        if (etat = false){
-            return true;
-        }else{
-            return false;
-        }
+       return etat = false;
     }
     
+    /**
+     *Permet de verifier l'etat de la cellule, ici voir si elle est eteinte 
+     * @return
+     */
     public boolean estAllumee(){
-        if (etat=true){
-            return true;
-        }else{
-            return false;
-        }
+       return etat=true;
     }
+
+    /**
+     * Permet simplement de verifier l'etat de la cellule, ce qui nous donnera soit activée soit eteinte
+     * @return
+     */
     public boolean getEtat(){
         return etat;
         
     }
     
+    /**
+     * Permet d'avoir des X et O dans les cellules et non les references objets ce qui rend la lecture plus simple 
+     * @return
+     */
     @Override
     public String toString () {    // méthode string 
         String allume;
@@ -74,6 +91,8 @@ public class CelluleLumineuse {
             return "O";
         }
     }
+
+    
     
     
     
