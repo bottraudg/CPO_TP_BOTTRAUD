@@ -15,14 +15,10 @@ private boolean etat;
     
     }
 
-   
-    
-   
-    
     /**
-     * Permet d'allumer la cellule
+     * Permet d'activer la cellule c'est à dire changer son état initial
      */
-    public void activerCellule(){
+    public void activerCellule(){ 
         etat= !etat;
     }
     

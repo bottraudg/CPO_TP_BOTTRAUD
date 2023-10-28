@@ -15,11 +15,11 @@ public class LightOff_BOTTRAUD_version_console {
      */
     public static void main(String[] args) {
         
-        CelluleLumineuse cellule1 = new CelluleLumineuse(false);
-        CelluleLumineuse cellule2 = new CelluleLumineuse(true);
-        GrilleDeCellules grilleTest = new GrilleDeCellules(5, 5);
+        CelluleLumineuse cellule1 = new CelluleLumineuse(false);// création d'une cellule "cellule1"
+        CelluleLumineuse cellule2 = new CelluleLumineuse(true);//  création d'une cellule "cellule2"
+        GrilleDeCellules grilleTest = new GrilleDeCellules(5, 5);// création d'une grille test 
         Partie partie = new Partie(); // Crée une instance de la classe Partie
-        partie.initialiserPartie();
+        partie.initialiserPartie();// appele de la methode initialiser partie 
         partie.lancerPartie(); // Appelle la méthode lancerPartie pour commencer le jeu
 
         cellule1.activerCellule();
@@ -63,7 +63,7 @@ public class LightOff_BOTTRAUD_version_console {
 
         grilleTest.melangerMatriceAleatoirement(10);
         System.out.println("Après mélange aléatoire :");
-        System.out.println(grilleTest.toString());//
+        System.out.println(grilleTest.toString());
 
     }
 
