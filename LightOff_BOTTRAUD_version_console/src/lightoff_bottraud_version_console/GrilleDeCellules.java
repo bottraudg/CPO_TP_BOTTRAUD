@@ -12,7 +12,7 @@ import java.util.Random;
  */
 public class GrilleDeCellules {
 
-    private CelluleLumineuse[][] matriceCellules;
+    private CelluleLumineuse[][] matriceCellules;//
     int nbLignes;
     int nbColonnes;
 
