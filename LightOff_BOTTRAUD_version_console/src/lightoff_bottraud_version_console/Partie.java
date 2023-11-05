@@ -24,9 +24,8 @@ public class Partie {
      * Ce constructeur permet de contruire la grille en fonction de la difficulté choisie
      */
     public Partie() {
-        //grille = new GrilleDeCellules(2, 2); // Crée une nouvelle grille de 5x5
-        //nbCoups = 0;
-        //int difficulte = 0;
+        //grille = new GrilleDeCellules(2, 2); // Crée une nouvelle grille de 2x2
+        System.out.println("Bienvenue dans le jeu LightOff!");
         scanner = new Scanner(System.in);
         while (difficulte == 0) {
             System.out.println("Choisisez un niveau ( facile/ moyen/ difficile ) : ");
@@ -35,28 +34,29 @@ public class Partie {
             int nbCellule = 0;
             // NIVEAU FACILE 
             if (niveau.equalsIgnoreCase("facile")) {
-                //grille = new GrilleDeCellules(3, 3); // Crée une nouvelle grille de 5x5
-                nbCellule = 3;
-                difficulte = 100;
+                //grille = new GrilleDeCellules(3, 3); // Crée une nouvelle grille de 5x5 
+                // AUTRE METHODE, QUI DEMANDE PLUS D'ÉCRITURE, ECRIRE "grille = new GrilleDeCellules(3, 3);" POUR CHAQUE NIVEAU ( pareil pour le niveau moyen et difficile)
+                nbCellule = 3; // taille de la grille / matrice 
+                difficulte = 50;
             }
             if (niveau.equalsIgnoreCase("moyen")) {
                 //grille = new GrilleDeCellules(4, 4); // Crée une nouvelle grille de 5x5
-                nbCellule = 4;
+                nbCellule = 4;// taille de la grille / matrice 
                 difficulte = 50;
             }
             if (niveau.equalsIgnoreCase("difficile")) {
-                nbCellule = 5;
+                nbCellule = 5;// taille de la grille / matrice 
                 //grille = new GrilleDeCellules(5, 5); // Crée une nouvelle grille de 5x5
 
                 difficulte = 10;
             }
             
-            grille = new GrilleDeCellules(nbCellule, nbCellule); // Crée une nouvelle grille de 5x5
+            grille = new GrilleDeCellules(nbCellule, nbCellule); // Crée une nouvelle grille à taille variable 
         }
     }
 
     /**
-     * permet d'initialiser le jeu c'est-à-dire de préparer le plateau de jeu
+     * Permet d'initialiser le jeu c'est-à-dire de préparer le plateau de jeu
      */
     public void initialiserPartie() {
         grille.melangerMatriceAleatoirement(50); // Mélange la grille pour l'initialiser
@@ -69,28 +69,30 @@ public class Partie {
         initialiserPartie();
        
 
-        System.out.println("Bienvenue dans le jeu LightOff!");
-
+        
+// CES LIGNES NE SONT PLUS UTILES CAR LA TAILLE DE GRILLE CHANGE EN FONCTION DU NIVEAU 
         //while (!grille.cellulesToutesEteintes()) {
         //System.out.println("Grille actuelle :");
         //System.out.println(grille.toString());
 
-        // Demander au joueur de saisir un coup
-        // Manière de jouer : choisir entre ligne colonne et diagonale, puis si colonne ou ligne a été choisi
-        // choisir par la suite un chiffre entre 0 et nbLignes (pareil pour les colonnes avec nbColonnes). si diagonale a etait choisi 
-        //choisir descendante ou montante  
-        //boolean victoire = false;
+        /* ||METHODE DE JEU||
+        1. Choisir le niveau de jeu entre facile (50 coups et matrice 3/3); moyen (50 coups et matrice 4/4); difficile (10 coups et matrice 5/5)
+        2. Choisir entre ligne colonne et diagonale
+        2.1. Si colonne ou ligne a été choisi : choisir par la suite un chiffre entre 0 et nbLignes (pareil pour les colonnes avec nbColonnes)
+        2.2. Si diagonale a etait choisi : choisir descendante ou montante  
+        */
         
-
-        //}
+        
+        
         for (int i = 0; i < difficulte; i++) {
             System.out.println(grille);
             if (grille.cellulesToutesEteintes()) {
                 System.out.println("C'est gagné");
-                victoire = true;
-                break;
-            }
-            System.out.println("Il reste " + String.valueOf(difficulte - i) + " coups");
+                victoire = true; 
+                break;// arret de la boucle while si toute les cellules sont allumées 
+            } 
+            
+            System.out.println("Il reste " + String.valueOf(difficulte - i) + " coups");// donne le nombres de coups restants 
             System.out.println("Entrez un coup (ligne, colonne ou diagonale) : ");
             scanner.reset();
             coup = scanner.nextLine();// enter ligne ou colonne ou diagonale
@@ -130,113 +132,7 @@ public class Partie {
 
 }
 
-//while(nbCoups<100 ){
-
-/* System.out.println(grille.toString());
-                     System.out.println("Entrez un coup (ligne, colonne ou diagonale) : ");
-                  coup = scanner.nextLine();// enter ligne ou colonne ou diagonale
-                    // ACTIONS SUR LIGNE
-                    if (coup.equalsIgnoreCase("ligne")) {
-                System.out.println("Quelle ligne voulez vous activer ? ");
-
-                int ligne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
-                grille.activerLigneDeCellules(ligne);
-                //ACTION DUR COLONNE
-            } else if (coup.equalsIgnoreCase("colonne")) {
-                 System.out.println("Quelle colonne voulez vous activer ? ");
-                 
-                 
-                int colonne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
-                grille.activerColonneDeCellules(colonne); 
-                
-                // ACTION SUR DIAGONALE 
-            } else if (coup.equalsIgnoreCase("diagonale")) {
-                System.out.println ( "Quelle diagonale voulez vous activer, montante ou descendante");
-                String diagonale = scanner.nextLine();// rentrer montante ou descendante
-                if (diagonale.equalsIgnoreCase("montante")){
-                    grille.activerDiagonaleDescendante();
-                }else{
-                    grille.activerDiagonaleMontante();
-                }
-            } else {
-                System.out.println("Coup invalide, veuillez entrer 'ligne', 'colonne' ou 'diagonale'.");
-                //continue; // Répéter le tour
-            }
-                    System.out.println(nbCoups);
-                    nbCoups ++;
-                //}
-                     
-                    // NIVEAU MOYEN 
-                }else if (niveau.equalsIgnoreCase("moyen")){ 
-             
-                while(nbCoups<10 ){
-                    System.out.println("Entrez un coup (ligne, colonne ou diagonale) : ");
-                    if (coup.equalsIgnoreCase("ligne")) {
-                System.out.println("Quelle ligne voulez vous activer ? ");
-
-                int ligne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
-                grille.activerLigneDeCellules(ligne);
-
-            } else if (coup.equalsIgnoreCase("colonne")) {
-                 System.out.println("Quelle colonne voulez vous activer ? ");
-                 
-                 
-                int colonne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
-                grille.activerColonneDeCellules(colonne); 
-                
-                
-            } else if (coup.equalsIgnoreCase("diagonale")) {
-                System.out.println ( "Quelle diagonale voulez vous activer, montante ou descendante");
-                String diagonale = scanner.nextLine();// rentrer montante ou descendante
-                if (diagonale.equalsIgnoreCase("montante")){
-                    grille.activerDiagonaleDescendante();
-                }else{
-                    grille.activerDiagonaleMontante();
-                }
-            } else {
-                System.out.println("Coup invalide, veuillez entrer 'ligne', 'colonne' ou 'diagonale'.");
-                continue; // Répéter le tour
-            }
-               
-                }
-                // NIVEAU DIFFICILE
-            }else if (niveau.equalsIgnoreCase("difficile")){
-                
-            
-            
-            
-                while(nbCoups<5 ){// nombre de coups limité à 5 coups 
-                    System.out.println("Entrez un coup (ligne, colonne ou diagonale) : ");
-                    if (coup.equalsIgnoreCase("ligne")) {
-                System.out.println("Quelle ligne voulez vous activer ? ");
-
-                int ligne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
-                grille.activerLigneDeCellules(ligne);
-
-            } else if (coup.equalsIgnoreCase("colonne")) {
-                 System.out.println("Quelle colonne voulez vous activer ? ");
-                 
-                 
-                int colonne = scanner.nextInt();// rentrer un chiffre entre 0 et nbLigne
-                grille.activerColonneDeCellules(colonne); 
-                
-                
-            } else if (coup.equalsIgnoreCase("diagonale")) {
-                System.out.println ( "Quelle diagonale voulez vous activer, montante ou descendante");
-                String diagonale = scanner.nextLine();// rentrer montante ou descendante
-                if (diagonale.equalsIgnoreCase("montante")){
-                    grille.activerDiagonaleDescendante();
-                }else{
-                    grille.activerDiagonaleMontante();
-                }
-            } else {
-                System.out.println("Coup invalide, veuillez entrer 'ligne', 'colonne' ou 'diagonale'.");
-                continue; // Répéter le tour
-            }
-                
-                }}
-
-            }
+            // CODE QUI PERMET DE FAIRE FAIRE FONCTIONNER LE JEU SANS NIVEAUX 
 
             /* if (coup.equalsIgnoreCase("ligne")) {
                 System.out.println("Quelle ligne voulez vous activer ? ");

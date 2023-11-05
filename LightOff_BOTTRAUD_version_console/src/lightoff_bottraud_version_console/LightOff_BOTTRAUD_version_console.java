@@ -17,7 +17,7 @@ public class LightOff_BOTTRAUD_version_console {
         
         
         Partie partie = new Partie(); // Crée une instance de la classe Partie
-        //partie.initialiserPartie();// appele de la methode initialiser partie 
+        //partie.initialiserPartie(); n'est plus utile car la methode initialiserPartie est deja appeler dans la methode lancerPartie
         partie.lancerPartie(); // Appelle la méthode lancerPartie pour commencer le jeu
 
 
