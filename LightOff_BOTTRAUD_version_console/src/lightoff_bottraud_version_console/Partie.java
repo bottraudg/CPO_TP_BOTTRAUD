@@ -17,7 +17,7 @@ public class Partie {
     String coup = null;
     boolean victoire;
     String niveau;
-    int difficulte;
+    int difficulte;// nombre de coups disponibles 
     Scanner scanner;
 
     /**
@@ -36,7 +36,7 @@ public class Partie {
             if (niveau.equalsIgnoreCase("facile")) {
                 //grille = new GrilleDeCellules(3, 3); // Crée une nouvelle grille de 5x5 
                 // AUTRE METHODE, QUI DEMANDE PLUS D'ÉCRITURE, ECRIRE "grille = new GrilleDeCellules(3, 3);" POUR CHAQUE NIVEAU ( pareil pour le niveau moyen et difficile)
-                nbCellule = 3; // taille de la grille / matrice 
+                nbCellule = 3; // taille de la grille - matrice 
                 difficulte = 50;
             }
             if (niveau.equalsIgnoreCase("moyen")) {
