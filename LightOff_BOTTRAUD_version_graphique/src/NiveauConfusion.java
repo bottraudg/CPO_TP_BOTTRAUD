@@ -283,7 +283,7 @@ DiagDes.addActionListener(new ActionListener() {
                 DiagMontActionPerformed(evt);
             }
         });
-        getContentPane().add(DiagMont, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
+        getContentPane().add(DiagMont, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 40, -1));
 
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, -1, -1));
@@ -324,7 +324,7 @@ DiagDes.addActionListener(new ActionListener() {
                 DiagDesActionPerformed(evt);
             }
         });
-        getContentPane().add(DiagDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        getContentPane().add(DiagDes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 40, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
