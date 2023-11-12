@@ -35,11 +35,13 @@ public class FenetreDefaite extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
         jLabel1.setText("TU AS PERDU 🥲");
         jLabel1.setAlignmentX(10.0F);
         jLabel1.setAlignmentY(0.0F);
@@ -48,6 +50,10 @@ public class FenetreDefaite extends javax.swing.JFrame {
         jLabel2.setText("👎👎👎");
         jLabel2.setAlignmentY(0.0F);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 40, 20));
+
+        jLabel3.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel3.setText("Mais tu feras mieux la prochaine fois 😉");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -59,6 +65,7 @@ public class FenetreDefaite extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
 }
